@@ -72,6 +72,7 @@ const App = () => {
       <Header markup={cont} markopen={()=> setMark(!mark)}/>
       {!mark ? null : <Cart markopen={()=> setMark(!mark)}/>}
       {products}
+      <p>teste</p>
     </Container>
   );
 };
