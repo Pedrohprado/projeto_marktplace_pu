@@ -17,7 +17,7 @@ import {
   ButtonPut,
 } from "./style";
 import Header from "./components/Header";
-import Cart from "./pages/cart";
+import CartTest from "./pages/CartTest";
 
 const App = () => {
   const [cont, setCont] = React.useState(0);
@@ -70,7 +70,7 @@ const App = () => {
   return (
     <Container>
       <Header markup={cont} markopen={()=> setMark(!mark)}/>
-      {!mark ? null : <Cart markopen={()=> setMark(!mark)}/>}
+      {!mark ? null : <CartTest markopen={()=> setMark(!mark)}/>}
       {products}
     </Container>
   );

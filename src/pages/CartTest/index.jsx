@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { ButtonCloseMark, HeaderMark, Mark } from "./style";
 
-const Cart = ({ markopen }) => {
+const CartTest = ({ markopen }) => {
   return (
     <Mark>
       <HeaderMark>
@@ -12,4 +12,4 @@ const Cart = ({ markopen }) => {
   );
 };
 
-export default Cart;
+export default CartTest;
