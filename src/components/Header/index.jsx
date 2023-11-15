@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Heading, Title, ContainerMenu, ContainerMark, MarkUp } from "./style";
 import { IoBagHandle, IoMenuOutline } from "react-icons/io5";
-const Header = ({ markup }) => {
+const Header = ({ markup, markopen }) => {
+
   return (
     <Heading>
       <ContainerMenu>
@@ -9,8 +10,8 @@ const Header = ({ markup }) => {
       </ContainerMenu>
       <Title>Purina</Title>
       <ContainerMark>
-        <IoBagHandle size={25} />
-        {markup ? <MarkUp>{markup}</MarkUp> : ""}
+        <IoBagHandle size={25} onClick={markopen}/>
+        {markup ? <MarkUp onClick={markopen}>{markup}</MarkUp> : ""}
       </ContainerMark>
     </Heading>
   );
