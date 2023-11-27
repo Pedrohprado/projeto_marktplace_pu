@@ -32,7 +32,10 @@ const App = () => {
         <Header markopen={() => setMark(!mark)} />
         {!mark ? null : <CartTest markopen={() => setMark(!mark)} />}
         <ContainerProducts>{products}</ContainerProducts>
-        <ButtonFun namebutton={'colocar no carrinho'} />
+        <ButtonFun
+          markopen={() => setMark(!mark)}
+          namebutton={'Ir para o carrinho'}
+        />
       </Container>
     </GlobalSotage>
   );
