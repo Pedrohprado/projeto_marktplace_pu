@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import { Button } from "../style";
+import { Button } from '../style';
 
-const ButtonFun = ({ onClick, namebutton }) => {
-  return <Button onClick={onClick}>{namebutton}</Button>;
+const ButtonFun = ({ namebutton }) => {
+  return <Button>{namebutton}</Button>;
 };
 
 export default ButtonFun;

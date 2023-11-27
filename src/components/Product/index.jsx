@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from "react";
-
-import ButtonFun from "../ButtonFun";
+import React from 'react';
 
 import {
   ContainerImg,
@@ -11,27 +9,19 @@ import {
   Info,
   ContainerMM,
   ButtonPut,
-} from "./style";
+} from './style';
+import { GlobalContext } from '../../../context/GlobalContext';
 
-const Product = ({ imagem, nome, peso, price, setCont, cont }) => {
-  const [value, setValue] = React.useState(1);
-
-  function handleClick(e) {
-    const i = e.target.innerHTML;
-    if (i === "+") {
-      setValue(value + 1);
-    } else if (i == "-" && value > 1) {
-      setValue(value - 1);
-    }
-  }
+const Product = ({ id, imagem, nome, peso, price }) => {
+  const { test, addToCart, removeToCart } = React.useContext(GlobalContext);
 
   return (
     <InfoProducts>
       <ContainerImg>
         <img
           src={imagem}
-          alt="produto"
-          style={{ width: "300px", height: "340px" }}
+          alt='produto'
+          style={{ width: '300px', height: '340px' }}
         />
       </ContainerImg>
 
@@ -43,16 +33,10 @@ const Product = ({ imagem, nome, peso, price, setCont, cont }) => {
       </ContainerInfoProduto>
 
       <ContainerMM>
-        <ButtonPut onClick={handleClick}>-</ButtonPut>
-        <p>{value}</p>
-        <ButtonPut onClick={handleClick}>+</ButtonPut>
+        <ButtonPut onClick={() => removeToCart(id)}>-</ButtonPut>
+        <p>{test[id]}</p>
+        <ButtonPut onClick={() => addToCart(id)}>+</ButtonPut>
       </ContainerMM>
-      <ButtonFun
-        onClick={() => {
-          setCont(cont + value);
-        }}
-        namebutton={"colocar no carrinho"}
-      />
     </InfoProducts>
   );
 };
