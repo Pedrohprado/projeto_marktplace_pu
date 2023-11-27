@@ -3,6 +3,7 @@ import React from 'react';
 import { GlobalContext } from './GlobalContext';
 import {
   RetLittleCard,
+  LittleCardClose,
   LittleCardImg,
   LittleCardTitle,
   LittleCardSub,
@@ -12,7 +13,7 @@ const CardItem = ({ id, imagem, nome, peso, price }) => {
   const { test, zeroToCart } = React.useContext(GlobalContext);
   return (
     <RetLittleCard>
-      <button onClick={() => zeroToCart(id)}>remover</button>
+      <LittleCardClose onClick={() => zeroToCart(id)}>X</LittleCardClose>
       <LittleCardImg src={imagem} alt='' />
       <LittleCardTitle>{nome}</LittleCardTitle>
       <LittleCardSub>

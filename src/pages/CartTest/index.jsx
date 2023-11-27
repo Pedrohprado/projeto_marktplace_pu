@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { GlobalContext } from '../../../context/GlobalContext';
-import { ButtonCloseMark, HeaderMark, Mark } from './style';
+import { ButtonCloseMark, HeaderMark, InfoTotalCard, Mark } from './style';
 import { produtos } from '../../data/produtos';
 import CardItem from '../../../context/CardItem';
 
@@ -32,9 +32,9 @@ const CartTest = ({ markopen }) => {
       </HeaderMark>
       {products}
       {totalAmount > 0 ? (
-        <p>Total da compra: {totalAmount} R$</p>
+        <InfoTotalCard>Total da compra: {totalAmount} R$</InfoTotalCard>
       ) : (
-        <p>carrinho vazio</p>
+        <p>carrinho vazio :(</p>
       )}
     </Mark>
   );

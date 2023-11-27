@@ -30,6 +30,16 @@ export const HeaderMark = styled.header`
   padding: 40px 30px;
 `;
 
+export const InfoTotalCard = styled.p`
+  background-color: #1fd0a1;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+
+  padding: 10px 20px;
+  border-radius: 7px;
+`;
+
 export const ButtonCloseMark = styled.button`
   width: 30px;
   height: 30px;
@@ -56,6 +66,23 @@ export const RetLittleCard = styled.div`
 
   margin-bottom: 20px;
   padding: 10px 0px 15px 0px;
+  position: relative;
+`;
+
+export const LittleCardClose = styled.button`
+  width: 30px;
+  height: 30px;
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  font-weight: bold;
+  color: #a81e1e;
+
+  background: #d9d9d9;
+  border: none;
+  border-radius: 7px;
 `;
 
 export const LittleCardImg = styled.img`
