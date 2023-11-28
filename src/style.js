@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.main`
   width: 100%;
@@ -6,6 +6,7 @@ export const Container = styled.main`
   align-items: center;
   justify-content: start;
   flex-direction: column;
+  padding-bottom: 20px;
 `;
 
 export const ContainerProducts = styled.main`

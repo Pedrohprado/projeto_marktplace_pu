@@ -5,12 +5,18 @@ import { produtos } from '../src/data/produtos';
 export const GlobalContext = React.createContext();
 
 export const GlobalSotage = ({ children }) => {
-  const [test, setTest] = React.useState({
-    [1010]: 0,
-    [1011]: 0,
-    [1012]:0,
-    [1013]:0
-  });
+  // const [test, setTest] = React.useState({
+  //   [1010]: 0,
+  //   [1011]: 0,
+  //   [1012]:0,
+  //   [1013]:0
+  // });
+  const [test, setTest] = React.useState(
+    produtos.reduce((acc, produto) => {
+      acc[produto.codigo] = 0;
+      return acc;
+    }, {})
+  );
 
   const [cont, setCont] = React.useState(false);
 
