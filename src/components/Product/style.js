@@ -1,14 +1,17 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const InfoProducts = styled.div`
   padding: 20px 0px;
 
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   flex-direction: column;
   border-radius: 7px;
-  width: 50%;
+
+  @media screen and (max-width: 700px) {
+    width: 50%;
+  }
 `;
 
 export const ContainerImg = styled.div`

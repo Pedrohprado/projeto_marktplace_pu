@@ -11,11 +11,13 @@ export const Container = styled.main`
 
 export const ContainerProducts = styled.main`
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: start;
+  display: grid;
+  grid-template-columns: auto auto auto;
 
   @media screen and (max-width: 700px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
   }
 `;
