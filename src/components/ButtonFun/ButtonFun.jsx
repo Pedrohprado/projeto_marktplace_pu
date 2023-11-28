@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Button } from '../style';
+import { Button } from './style';
 
 const ButtonFun = ({ markopen, namebutton }) => {
   const handleCLick = () => {

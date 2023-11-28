@@ -1,42 +1,27 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React from 'react';
-import './App.css';
-
-import { produtos } from './data/produtos';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { GlobalSotage } from '../context/GlobalContext';
 
-import { Container, ContainerProducts } from './style';
+import HomePage from './pages/HomePage';
+import ProductDog from './pages/ProductDog';
 
-import Header from './components/Header';
-import CartTest from './pages/CartTest';
-import Product from './components/Product';
-import ButtonFun from './components/ButtonFun';
+import './App.css';
 
 const App = () => {
-  const [mark, setMark] = React.useState(false);
-
-  const products = produtos.map(({ codigo, nome, img, kg, price }) => (
-    <Product
-      key={codigo}
-      id={codigo}
-      nome={nome}
-      imagem={img}
-      peso={kg}
-      price={price}
-    />
-  ));
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <HomePage />,
+    },
+    {
+      path: '/pet/dog/racao',
+      element: <ProductDog />,
+    },
+  ]);
 
   return (
     <GlobalSotage>
-      <Container>
-        <Header markopen={() => setMark(!mark)} />
-        {!mark ? null : <CartTest markopen={() => setMark(!mark)} />}
-        <ContainerProducts>{products}</ContainerProducts>
-        <ButtonFun
-          markopen={() => setMark(!mark)}
-          namebutton={'Ir para o carrinho'}
-        />
-      </Container>
+      <RouterProvider router={router} />
     </GlobalSotage>
   );
 };
